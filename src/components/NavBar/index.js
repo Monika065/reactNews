@@ -1,6 +1,6 @@
 export const navBar = {
   backgroundColor: "rgb(41, 47, 51)",
-  padding: "20px",
+  padding: "10px",
   fontSize: "18px",
 };
 
@@ -26,21 +26,18 @@ export const searchForm = {
 };
 
 export const formInput = {
-  borderRadius: "6px",
+  borderRadius: "4px",
   padding: "11px",
   marginLeft: "13px",
 };
 
-export const logo = {
-  width: "45px",
-};
 
 export const btnColor = {
   backgroundColor: "#005abb",
   color: "white",
   fontWeight: "700",
-  borderRadius: "6px",
-  padding: "8px 15px",
+  borderRadius: "5px",
+  padding: "6px 13px",
   borderColor: "#323762b7",
   fontSize: "20px",
   marginRight: "10px",

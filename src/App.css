@@ -1,0 +1,134 @@
+
+.form button{
+    width: 320px;
+      height: 40px;
+      background-color: green !important;
+      border: 1px solid green;
+      color: black;
+      
+  }
+  h1,h6,p,h4{
+    color:grey;
+    font-size: 18px;
+  }
+  html,body{
+    background-color:#fff;
+  }
+  .login{
+    padding-top:10%;
+    align-items:center;
+    text-align:center;
+    background-color:#fff;
+  }
+  .home{
+    align-items:center;
+    text-align:center;
+    background-color:#fff;
+  }
+  /* .card{
+    background-color:#111 !important;
+    margin-bottom:20px;
+    border: 1px solid green;
+  
+  } */
+  .news-app {
+    display:flex;
+    justify-content: center; 
+  }
+  
+  .news-item {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid;
+    margin-bottom: 10px;
+    background-color:white;
+  }
+  .news-item p, a{
+    color:#000;
+    text-decoration:none;
+  }
+  .cheader{
+    color:#1f2833 !important;
+  }
+  
+  .news-img {
+    width: 90%;
+    height:100px;
+  }
+  /* .card{
+    margin-bottom:20px;
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:10px;
+    background-color:#66fcf1 !important;
+    box-shadow: 5px 4px 20px 0 rgba(0, 0, 0, 0.2), 5px 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  } */
+  /* .card-text{
+    margin-top:10px;
+    color:black !important;
+  }
+  .cheader.card-header {
+    color: #fff !important;
+    background-color: #111 !important;
+  }
+  .card-footer.card-footer {
+    background-color: #111 !important;
+  }
+  .card-footer{
+    background-color:#111 !important;
+  } */
+  .signup{
+    align-items:center;
+    text-align:center;
+    background-color:#fff;
+    padding-top: 6%;
+  }
+  .form .btn{
+    background-color: brown;
+  }
+  .card-header, .card-footer{
+    background-color:#aaa !important;
+    color:#fff !important;
+  }
+  /* .signup{
+    border: 1px solid green;
+  } */
+  
+  .form input{
+    width:300px;
+      height:40px;
+      display:block;
+      padding-left: 20px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 30px;
+      border: 1px solid green;
+      align-items: center;
+      
+      
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #151616;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

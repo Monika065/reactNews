@@ -4,20 +4,17 @@ import { Button, Form, FormControl, Nav, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import { navbarBrand, navs } from "../../config/config";
-import logoImage from "../Images/logoImage.png";
+import { navs } from "../../config/config";
 import {
   btnColor,
   formInput,
-  logo,
   nav,
   navBar,
-  navBrand,
   closeBtn,
   searchForm,
 } from "./index";
 
-function NavBar() {
+function NavBar(props) {
   const navigate = useNavigate();
 
   const navRef = useRef(null);
@@ -27,7 +24,8 @@ function NavBar() {
   const handleInputChange = (e) => {
     setSearchQuery(e.target.value);
   };
-
+  let a=sessionStorage.getItem('cAuthenticated');
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate(`/search/${searchQuery}`);
@@ -40,7 +38,7 @@ function NavBar() {
   };
 
   const isSearchButtonDisabled = searchQuery.trim() === "";
-
+  
   return (
     <>
       <Navbar
@@ -51,10 +49,6 @@ function NavBar() {
         fixed="top"
         expanded={!isCollapsed}
       >
-        <Navbar.Brand style={navBrand} href="/">
-          <img src={logoImage} alt="Logo" style={logo} />
-          {navbarBrand}
-        </Navbar.Brand>
         {isCollapsed && (
           <Navbar.Toggle
             className="border-0"
@@ -97,6 +91,37 @@ function NavBar() {
             </Button>
           </Form>
         </Navbar.Collapse>
+        {/* <div className="container">
+          <div className="Right-section">
+            <button className="logoutButton" onClick={props.onLogout}>
+              Logout
+            </button>
+          </div>
+        </div> */}
+        {
+          <Nav.Link
+            style={{ color: "grey" }}
+            onClick={props.onLogout}
+          >
+            <h5>Log Out</h5>{" "}
+          </Nav.Link>
+        }
+        {/* {
+          <>
+            <Nav.Link
+              style={{ color: "grey" }}
+              href="/signup"
+            >
+              <h5>Signup</h5>
+            </Nav.Link>
+            <Nav.Link
+              style={{ color: "grey" }}
+              href="/login"
+            >
+              <h5>Login</h5>
+            </Nav.Link>
+          </>
+        } */}
       </Navbar>
     </>
   );

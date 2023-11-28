@@ -49,9 +49,11 @@ function News(props) {
           <Header>{header(capitaLize(category))}</Header>
           <Container>
             <Row>
+            <div className="row row-cols-1 row-cols-md-4 row-eq-height" > 
               {articles.map((element) => {
                 return (
-                  <Col sm={12} md={6} lg={4} xl={3} style={card} key={uuidv4()}>
+                 // <Col sm={12} md={6} lg={4} xl={3} style={card} key={uuidv4()}>
+                 <div className="col-sm-4  d-flex align-items-stretch " style ={card} key={uuidv4()}>
                     <NewsItem
                       title={element.title}
                       description={element.description}
@@ -64,11 +66,14 @@ function News(props) {
                       }
                       urlNews={element.url}
                     />
-                  </Col>
+                    </div>
+                 
                 );
               })}
+              </div>
             </Row>
           </Container>
+          
         </>
       )}
     </>

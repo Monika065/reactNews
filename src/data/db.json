@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "pnumber": "1234567890",
+      "password": "password123"
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "pnumber": "1234567890",
+      "password": "password123"
+    },
+    {
+      "id": 3,
+      "name": "John Doe",
+      "pnumber": "1234567890",
+      "password": "password123"
+    },
+    {
+      "id": 4,
+      "name": "monika",
+      "pnumber": "7807549280",
+      "password": "Monika123"
+    },
+    {
+      "id": 5,
+      "name": "monika",
+      "pnumber": "9882343318",
+      "password": "123456"
+    },
+    {
+      "id": 6,
+      "name": "monika",
+      "pnumber": "9882343318",
+      "password": "123123123"
+    }
+  ]
+}
