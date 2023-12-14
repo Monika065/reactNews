@@ -13,4 +13,6 @@ export const text = {
   marginTop: "4px",
   fontSize: "12px",
   opacity: 1,
+  marginLeft:"15px",
+  marginRight:"-15px"
 };

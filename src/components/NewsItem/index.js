@@ -2,6 +2,9 @@ export const card = {
   borderRadius: "15px",
   backgroundColor: "rgb(41, 47, 51)",
   color: "#fff",
+  minHeight:"250px",
+  padding:"10px 10px"
+
  };
 
 export const img = {

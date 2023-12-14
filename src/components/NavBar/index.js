@@ -1,6 +1,6 @@
 export const navBar = {
   backgroundColor: "rgb(41, 47, 51)",
-  padding: "10px",
+  padding: "14px",
   fontSize: "18px",
 };
 
@@ -20,15 +20,19 @@ export const closeBtn = {
   marginInlineEnd: "6px",
 };
 
-export const searchForm = {
+export const searchBar= {
   display: "flex",
   alignItem: "center",
+  marginRight:"30px",
+  // marginLeft:"10px",
+  
 };
 
 export const formInput = {
-  borderRadius: "4px",
+  borderRadius: "3px",
   padding: "11px",
-  marginLeft: "13px",
+  marginLeft: "3px",
+  
 };
 
 
@@ -42,3 +46,8 @@ export const btnColor = {
   fontSize: "20px",
   marginRight: "10px",
 };
+export const navbar={
+  color:"blue",
+fontSize:"30px"
+};
+

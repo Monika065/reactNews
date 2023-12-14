@@ -8,11 +8,14 @@ const Post = ({ id, title, content, editPost, deletePost }) => {
           <h3>{title}</h3>
           <hr className="new1"></hr>
           <p>{content}</p>
-          <span title="edit post" onClick={() => editPost(id)}>
-            <i className="edit-button far fa-edit fa-2x button-css" />
+          <span   className="edit"   title="edit post" onClick={() => editPost(id)}>
+            {/* <i className="edit-button far fa-edit fa-2x button-css" />  */}
+           Edit 
+
           </span>
-          <span title="delete post" onClick={() => deletePost(id)}>
-            <i className="delete-button fas fa-trash fa-2x ml-2 button-css" />
+          <span className="delete" title="delete post" onClick={() => deletePost(id)}>
+            {/* <i className="delete-button fas fa-trash fa-2x ml-2 button-css" /> */}
+            Delete
           </span>
         </section>
       </div>

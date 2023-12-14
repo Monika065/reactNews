@@ -2,80 +2,92 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import NullImage from "../../components/Images/nullImage.png";
-import Loading from "../Loading/Loading";
+// import Loading from "../Loading/Loading";
 import NewsItem from "../NewsItem/NewsItem";
 import { v4 as uuidv4 } from "uuid";
-import { Col, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import { header } from "../../config/config";
-import { endpointPath } from "../../config/api";
+// import { endpointPath } from "../../config/api";
 import { Container, Header, card } from "./index";
-
+// import { useDispatch } from "react-redux";
+import { useGetArticlesQuery } from "../../redux/features/apiSlice";
 function News(props) {
-  const { newscategory, country } = props;
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
+  //const dispatch = useDispatch();
+  const { data: articles = [], isLoading, isError } = useGetArticlesQuery();
+  console.log(articles);
 
+  console.log(articles);
   const capitaLize = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
+  const filterByCategory =
+    props.newscategory !== ""
+      ? articles.filter((item) => item.source.category === props.newscategory)
+      : articles;
+  console.log(filterByCategory);
+  const filteredArticles = filterByCategory.filter((item) =>
+    item.title.toLowerCase().includes(props.searchTerm.toLowerCase())
+  );
 
-  const category = newscategory;
+  const category = props.newscategory;
   const title = capitaLize(category);
   document.title = `${capitaLize(title)} - News`;
 
-  const updatenews = async () => {
-    try {
-      const response = await axios.get(endpointPath(country, category));
-      setLoading(true);
-      const parsedData = response.data;
-      setArticles(parsedData.articles);
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-  useEffect(() => {
-    updatenews();
-    // eslint-disable-next-line
-  }, []);
-
+  if (isError) {
+    return <div>Error loading products</div>;
+  }
   return (
     <>
-      {loading ? (
+      {/* {loading ? (
         <Loading />
-      ) : (
-        <>
-          <Header>{header(capitaLize(category))}</Header>
-          <Container>
-            <Row>
-            <div className="row row-cols-1 row-cols-md-4 row-eq-height" > 
-              {articles.map((element) => {
-                return (
-                 // <Col sm={12} md={6} lg={4} xl={3} style={card} key={uuidv4()}>
-                 <div className="col-sm-4  d-flex align-items-stretch " style ={card} key={uuidv4()}>
-                    <NewsItem
-                      title={element.title}
-                      description={element.description}
-                      published={element.publishedAt}
-                      channel={element.source.name}
-                      alt="News image"
-                      publishedAt={element.publishedAt}
-                      imageUrl={
-                        element.image === null ? NullImage : element.image
-                      }
-                      urlNews={element.url}
-                    />
-                    </div>
-                 
-                );
-              })}
-              </div>
-            </Row>
-          </Container>
-          
-        </>
-      )}
+      ) : ( */}
+      {/* <>  */}
+      <Header>{header(capitaLize(category))}</Header>
+      <Container>
+        <Row>
+          {/* s */}
+          <div className="row row-cols-1 row-cols-md-4 row-eq-height">
+            {filteredArticles.map((element) => {
+              return (
+                // <Col sm={12} md={6} lg={4} xl={3} style={card} key={uuidv4()}>
+                <div
+                  className="col-sm-4  d-flex align-items-stretch "
+                  style={card}
+                  key={uuidv4()}
+                >
+                   
+                  <NewsItem
+                    title={element.title}
+                    description={element.description}
+                    content={element.content}
+                    published={element.publishedAt}
+                    channel={element.source.name}
+                    alt="News Image"
+                    publishedAt={element.publishedAt}
+                    
+                    imageUrl={
+                      element.image === null ? NullImage : element.image
+                    }
+                   
+                    urlNews={element.url}
+                    id={element.id}
+                    
+                  />
+                  
+                </div>
+              );
+            })}
+          </div>
+          {/* </div> */}
+        </Row>
+      </Container>
+
+      {/* </> */}
+      {/* )} */}
     </>
   );
 }

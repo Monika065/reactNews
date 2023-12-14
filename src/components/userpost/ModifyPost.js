@@ -5,10 +5,10 @@ const ModifyPost = (props) => {
     <>
       <form>
         <h2>Modify Post</h2>
-        <label className="col-sm-12 col-form-label">
+        <label className="col-sm-12 col-form-label" style={{color:"white"}}>
           <b>Title</b>
           <input
-            className="form-control form-control-sm"
+            className="form-control form-control-sm "
             defaultValue={props.title}
             autoFocus={true}
             onChange={props.savePostTitleToState}
@@ -17,7 +17,7 @@ const ModifyPost = (props) => {
           />
         </label>
         <br />
-        <label className="col-sm-12 col-form-label">
+        <label className="col-sm-12 col-form-label"style={{color:"white"}}>
           <b>Content</b>
           <textarea
             className="form-control form-control-sm"
