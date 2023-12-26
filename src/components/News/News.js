@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import PropTypes from "prop-types";
 import NullImage from "../../components/Images/nullImage.png";
-// import Loading from "../Loading/Loading";
 import NewsItem from "../NewsItem/NewsItem";
-import { v4 as uuidv4 } from "uuid";
 import { Row } from "react-bootstrap";
 import { header } from "../../config/config";
-// import { endpointPath } from "../../config/api";
 import { Container, Header, card } from "./index";
 // import { useDispatch } from "react-redux";
 import { useGetArticlesQuery } from "../../redux/features/apiSlice";
+import Home from "../userpost/Home";
 function News(props) {
   //const dispatch = useDispatch();
   const { data: articles = [], isLoading, isError } = useGetArticlesQuery();
@@ -46,20 +44,21 @@ function News(props) {
         <Loading />
       ) : ( */}
       {/* <>  */}
+      {/* <Home/> */}
       <Header>{header(capitaLize(category))}</Header>
+      
       <Container>
         <Row>
           {/* s */}
           <div className="row row-cols-1 row-cols-md-4 row-eq-height">
             {filteredArticles.map((element) => {
               return (
-                // <Col sm={12} md={6} lg={4} xl={3} style={card} key={uuidv4()}>
+                
                 <div
                   className="col-sm-4  d-flex align-items-stretch "
                   style={card}
-                  key={uuidv4()}
+                  // key={uuidv4()}
                 >
-                   
                   <NewsItem
                     title={element.title}
                     description={element.description}
@@ -68,16 +67,12 @@ function News(props) {
                     channel={element.source.name}
                     alt="News Image"
                     publishedAt={element.publishedAt}
-                    
                     imageUrl={
                       element.image === null ? NullImage : element.image
                     }
-                   
                     urlNews={element.url}
                     id={element.id}
-                    
                   />
-                  
                 </div>
               );
             })}
@@ -85,7 +80,7 @@ function News(props) {
           {/* </div> */}
         </Row>
       </Container>
-
+      <Home/>
       {/* </> */}
       {/* )} */}
     </>

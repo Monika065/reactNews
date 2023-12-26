@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const SignUp = () => {
+const SignUp = (props) => {
   const [user, setUser] = useState([]);
   const [users, setUsers] = useState({
     id: "",
@@ -31,14 +31,16 @@ const SignUp = () => {
     event.preventDefault();
     axios
       .post("http://localhost:4000/users", users)
+
       .then((response) => {
         setUser([...user, response.data]);
+        props.onSignup()
         navigate("/");
         //setSuccesMsg("New Bookings has been added with the book id " + response.data.id)
       })
-      .catch((error) => {
-        setErrorMsg(error);
-      });
+      // .catch((error) => {
+      //   setErrorMsg(error);
+      // });
   };
 
   const handleChange = (event) => {
@@ -59,6 +61,7 @@ const SignUp = () => {
             value={users.name}
             onChange={handleChange}
             placeholder="Enter the Name:"
+            required
           />
           <input
             name="pnumber"
@@ -66,6 +69,7 @@ const SignUp = () => {
             value={users.pnumber}
             onChange={handleChange}
             placeholder="Enter the Number:"
+            required
           />
           <input
             name="password"
@@ -73,6 +77,7 @@ const SignUp = () => {
             value={users.password}
             onChange={handleChange}
             placeholder="Enter the Password:"
+            required
           />
           {/* <input type="button" className="btn" value="Sign Up" /> */}
           <button name="Submit" value="Submit" className="btn">
@@ -89,7 +94,7 @@ const SignUp = () => {
             Already register?
             <Link
               style={{ color: "#00ff00", textDecoration: "none" }}
-              to="/login"
+              to="/"
             >
               Login
             </Link>

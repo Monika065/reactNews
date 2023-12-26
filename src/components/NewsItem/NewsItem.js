@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Button, Card } from "react-bootstrap";
-import Details from "./Details/Details";
-import { card, img, btn, text } from "./index";
+ import Details from "./Details/Details";
+import { card, img,  text } from "./index";
 import "./style.css";
 import { Link } from "react-router-dom";
 

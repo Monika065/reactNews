@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 // import { IoCloseOutline } from "react-icons/io5";
 import { Nav, Navbar } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { closeBtn, nav, navBar, searchBar, navbar } from "./index";
+import {  nav, navBar, searchBar } from "./index";
 import { debounce } from "lodash";
 
 function NavBar(props) {
@@ -13,7 +13,11 @@ function NavBar(props) {
   const navigatHandler = () => {
     navigate("/myblog");
   };
-
+  
+  const handleLogout=()=>{
+    props.onLogout()
+    navigate("/")
+  }
   const handleCategorySelect = (category) => {
     props.onCategoryChange(category);
   };
@@ -43,10 +47,10 @@ function NavBar(props) {
         />
         {/* ... Other parts of your Navbar */}
         <Navbar.Collapse id="basic-navbar-nav">
-          <Navbar.Toggle
+          {/* <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             onClick={() => setIsCollapsed(!isCollapsed)}
-          />
+          /> */}
           <Nav
             style={nav}
             className="mr-auto"
@@ -58,12 +62,6 @@ function NavBar(props) {
             <Nav.Link onClick={() => handleCategorySelect("sports")}>
               <h7>Sports</h7>
             </Nav.Link>
-            {/* <Nav.Link
-              style={{ color: "grey" }}
-              onClick={() => handleCategorySelect("business")}
-            >
-              <h7>Business</h7>
-            </Nav.Link> */}
             <Nav.Link onClick={() => handleCategorySelect("technology")}>
               <h7>Technology</h7>
             </Nav.Link>
@@ -82,8 +80,8 @@ function NavBar(props) {
             <Nav.Link onClick={navigatHandler}>
               <h7>My Blog</h7>
             </Nav.Link>
-          </Nav>
-
+           
+</Nav>
           <input
             type="text"
             className={searchBar}
@@ -95,7 +93,7 @@ function NavBar(props) {
           {
             <Nav.Link
               // className="navbar"
-              onClick={props.onLogout}
+              onClick={handleLogout}
             >
               <h7>Log Out</h7>{" "}
             </Nav.Link>

@@ -62,6 +62,7 @@ const Login = (props) => {
             value={users.pnumber}
             onChange={handleChange}
             placeholder="Enter the Phone Number:"
+            required
           />
           <input
             name="password"
@@ -69,6 +70,7 @@ const Login = (props) => {
             value={users.password}
             onChange={handleChange}
             placeholder="Enter the Password:"
+            required
           />
           {/* <input type="button" className="btn" value="Sign Up" />*/}
           <button type="submit" value="Submit" className="btn">
@@ -94,3 +96,9 @@ const Login = (props) => {
   );
 };
 export default Login;
+
+
+
+
+
+

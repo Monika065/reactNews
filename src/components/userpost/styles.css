@@ -87,3 +87,32 @@
     cursor:pointer;
     text-decoration: aqua;
   }
+  label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: white;
+    padding-top: 20px;
+}
+p {
+  margin-top: -45px;
+  margin-bottom: 1rem;
+}
+h1{
+  padding-top: 10px;
+}
+.container{
+width: 93%;
+padding-right: (1.5rem, 0.75rem);
+padding-left: (1.5rem, 0.75rem);
+margin-right: auto;
+margin-left: auto;
+min-height:500px;
+margin-top: 100px;
+margin-bottom: 50px;
+}
+
+.cardStyle  {
+  width: 20rem;
+  margin: 10px;
+  margin-bottom:16px;
+}

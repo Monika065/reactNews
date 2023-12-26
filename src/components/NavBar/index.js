@@ -48,6 +48,6 @@ export const btnColor = {
 };
 export const navbar={
   color:"blue",
-fontSize:"30px"
+
 };
 
